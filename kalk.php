@@ -13,9 +13,10 @@
 if(isset($_POST['liczba1']) && isset($_POST['liczba2']) && isset($_POST['wybor']))
 {
 
-	$liczba1 = $_POST['liczba1'];
-	$liczba2 = $_POST['liczba2'];
+	@$liczba1 = $_POST['liczba1'];
+	@$liczba2 = $_POST['liczba2'];
 	$wybor = $_POST['wybor'];
+	$wynik;
 	
 	//echo "$liczba1<br>";
 	//echo "$liczba2<br>";
@@ -23,17 +24,18 @@ if(isset($_POST['liczba1']) && isset($_POST['liczba2']) && isset($_POST['wybor']
 	switch($wybor)
 	{
 		case 1:
-			echo $liczba1+$liczba2 . "<br>";
+			$wynik = $liczba1+$liczba2;
 			break;
 		case 2:
-			echo $liczba1-$liczba2 . "<br>";
+			$wynik=$liczba1-$liczba2;
 			break;
 		case 3:
-			echo $liczba1*$liczba2 . "<br>";
+			$wynik-$liczba1*$liczba2;
 			break;
 		case 4:
-			echo $liczba1/$liczba2 . "<br>";
+			$wynik=$liczba1/$liczba2;
 			break;
 	}
+	echo @$wynik . "<br>";
 }
 ?>
